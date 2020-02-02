@@ -1,0 +1,316 @@
+{
+  "name": "ComplexSubject",
+  "members": [
+    {
+      "name": "title",
+      "type": "kotlin.String",
+      "declaration": "Property",
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_HAVE_MINIMUM_LENGTH",
+            "minimumLength": 10
+          },
+          "message": "must have the specified minimum length: 10.",
+          "type": "RELATIVE"
+        },
+        {
+          "condition": {
+            "id": "MUST_HAVE_MAXIMUM_LENGTH",
+            "maximumLength": 100
+          },
+          "message": "must have the specified maximum length: 100.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "primaryReference",
+      "type": "kotlin.String?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL_OR_BLANK"
+          },
+          "message": "must not be null or blank.",
+          "type": "RELATIVE"
+        },
+        {
+          "condition": {
+            "id": "MUST_START_WITH",
+            "value": "REF"
+          },
+          "message": "must start with the specified value: REF.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "secondaryReference",
+      "type": "kotlin.String?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL_OR_BLANK"
+          },
+          "message": "must not be null or blank.",
+          "type": "RELATIVE"
+        },
+        {
+          "condition": {
+            "id": "MUST_START_WITH",
+            "value": "REF"
+          },
+          "message": "must start with the specified value: REF.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "secondaryReference",
+      "type": "kotlin.String?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_END_WITH",
+            "value": "_2ND"
+          },
+          "message": "must end with the specified value: _2ND.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "startDate",
+      "type": "java.time.LocalDate",
+      "declaration": "Property",
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_BE_LESS_THAN_OR_EQUAL_TO",
+            "value": "2000-01-01"
+          },
+          "message": "must be less than or equal to the specified value: 2000-01-01.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "endDate",
+      "type": "java.time.LocalDate",
+      "declaration": "Property",
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_BE_GREATER_THAN",
+            "value": "2000-01-01"
+          },
+          "message": "must be greater than the specified value: 2000-01-01.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "arbitraryAmount",
+      "type": "java.math.BigDecimal",
+      "declaration": "Property",
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_BE_GREATER_THAN_OR_EQUAL_TO",
+            "value": 0
+          },
+          "message": "must be greater than or equal to the specified value: 0.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "items",
+      "type": "kotlin.collections.List<io.onixlabs.kotlin.validation.NameValuePair>?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL"
+          },
+          "message": "must not be null.",
+          "type": "RELATIVE"
+        },
+        {
+          "condition": {
+            "id": "MUST_HAVE_COUNT",
+            "count": 10
+          },
+          "message": "must contain exactly the specified number of elements: 10.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "items",
+      "type": "kotlin.collections.List<io.onixlabs.kotlin.validation.NameValuePair>?",
+      "declaration": "Property",
+      "nullable": true,
+      "members": [
+        {
+          "name": "0",
+          "type": "io.onixlabs.kotlin.validation.NameValuePair",
+          "declaration": "Element",
+          "members": [
+            {
+              "name": "NameValuePair",
+              "members": [
+                {
+                  "name": "name",
+                  "type": "kotlin.String",
+                  "declaration": "Property",
+                  "assertions": [
+                    {
+                      "condition": {
+                        "id": "MUST_NOT_START_WITH",
+                        "value": "$"
+                      },
+                      "message": "must not start with the specified value: $.",
+                      "type": "RELATIVE"
+                    }
+                  ]
+                },
+                {
+                  "name": "value",
+                  "type": "kotlin.Any?",
+                  "declaration": "Property",
+                  "nullable": true,
+                  "assertions": [
+                    {
+                      "condition": {
+                        "id": "MUST_NOT_BE_NULL"
+                      },
+                      "message": "must not be null.",
+                      "type": "RELATIVE"
+                    },
+                    {
+                      "condition": {
+                        "id": "MUST_SATISFY"
+                      },
+                      "message": "must satisfy the specified predicate.",
+                      "type": "RELATIVE"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "metadata",
+      "type": "kotlin.collections.Map<kotlin.String, java.util.UUID>",
+      "declaration": "Property",
+      "members": [
+        {
+          "name": "key",
+          "type": "kotlin.String",
+          "declaration": "Entry",
+          "assertions": [
+            {
+              "condition": {
+                "id": "MUST_SATISFY"
+              },
+              "message": "must satisfy the specified predicate.",
+              "type": "RELATIVE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "defaultNameValuePair",
+      "type": "io.onixlabs.kotlin.validation.NameValuePair",
+      "declaration": "Property",
+      "members": [
+        {
+          "name": "NameValuePair",
+          "members": [
+            {
+              "name": "name",
+              "type": "kotlin.String",
+              "declaration": "Property",
+              "assertions": [
+                {
+                  "condition": {
+                    "id": "MUST_NOT_START_WITH",
+                    "value": "$"
+                  },
+                  "message": "must not start with the specified value: $.",
+                  "type": "RELATIVE"
+                }
+              ]
+            },
+            {
+              "name": "value",
+              "type": "kotlin.Any?",
+              "declaration": "Property",
+              "nullable": true,
+              "assertions": [
+                {
+                  "condition": {
+                    "id": "MUST_NOT_BE_NULL"
+                  },
+                  "message": "must not be null.",
+                  "type": "RELATIVE"
+                },
+                {
+                  "condition": {
+                    "id": "MUST_BE_EQUAL_TO",
+                    "value": true
+                  },
+                  "message": "must be equal to the specified value: true.",
+                  "type": "RELATIVE"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elapsed",
+      "type": "kotlin.Int",
+      "declaration": "Function",
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_BE_GREATER_THAN",
+            "value": 2
+          },
+          "message": "must be greater than the specified value: 2.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "getMetadataValue",
+      "type": "java.util.UUID",
+      "declaration": "Function",
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_BE_EQUAL_TO",
+            "value": "f1758a23-c14f-4397-957d-c63af8ca6273"
+          },
+          "message": "must be equal to the specified value: f1758a23-c14f-4397-957d-c63af8ca6273.",
+          "type": "RELATIVE"
+        }
+      ]
+    }
+  ]
+}

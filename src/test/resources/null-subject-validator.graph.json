@@ -1,0 +1,65 @@
+{
+  "name": "NullSubject",
+  "members": [
+    {
+      "name": "a",
+      "type": "kotlin.String?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL"
+          },
+          "message": "must not be null.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "b",
+      "type": "kotlin.Int?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL"
+          },
+          "message": "must not be null.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "c",
+      "type": "kotlin.Boolean?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL"
+          },
+          "message": "must not be null.",
+          "type": "RELATIVE"
+        }
+      ]
+    },
+    {
+      "name": "d",
+      "type": "kotlin.collections.List<kotlin.Any>?",
+      "declaration": "Property",
+      "nullable": true,
+      "assertions": [
+        {
+          "condition": {
+            "id": "MUST_NOT_BE_NULL"
+          },
+          "message": "must not be null.",
+          "type": "RELATIVE"
+        }
+      ]
+    }
+  ]
+}
