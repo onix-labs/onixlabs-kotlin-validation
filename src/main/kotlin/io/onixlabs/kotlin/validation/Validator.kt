@@ -38,11 +38,28 @@ abstract class Validator<T> {
          * @param action The action that will be executed by the validation builder.
          * @return Returns a custom validator implementation.
          */
-        inline fun <reified T : Any> validatorFor(
-            crossinline action: ValidationBuilder<T>.() -> Unit
-        ) = object : Validator<T>() {
-            override val genericKotlinClass: KClass<*> get() = T::class
-            override fun validate(builder: ValidationBuilder<T>) = action(builder)
+        inline fun <reified T : Any> validatorFor(crossinline action: ValidationBuilder<T>.() -> Unit): Validator<T> {
+            return object : Validator<T>() {
+                override val genericKotlinClass: KClass<*> get() = T::class
+                override fun validate(builder: ValidationBuilder<T>) = action(builder)
+            }
+        }
+
+        /**
+         * Builds and validates a subject on-the-fly.
+         *
+         * @param T The underlying subject class of the validator.
+         * @param subject The subject to be validated.
+         * @param action he action that will be executed by the validation builder.
+         * @throws ValidationGraphException if the validator fails.
+         */
+        inline fun <reified T : Any> validate(subject: T, crossinline action: ValidationBuilder<T>.() -> Unit) {
+            val validator = validatorFor(action)
+            val result = validator.validate(subject)
+            if (result.members.isNotEmpty()) {
+                val message = "Validation of the specified object type failed: ${result.name}."
+                throw ValidationGraphException(message, result.toList())
+            }
         }
     }
 

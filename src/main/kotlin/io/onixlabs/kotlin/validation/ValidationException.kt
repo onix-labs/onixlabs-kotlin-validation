@@ -22,4 +22,4 @@ package io.onixlabs.kotlin.validation
  * @param message A message detailing the validation exception. Typically this should be the assertion message.
  * @param cause An underlying cause of the validation exception.
  */
-class ValidationException(message: String, cause: Throwable? = null) : Exception(message, cause)
+open class ValidationException(message: String, cause: Throwable? = null) : Exception(message, cause)
