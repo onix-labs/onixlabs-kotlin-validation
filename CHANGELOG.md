@@ -4,6 +4,16 @@
 
 This document serves as the change log for the ONIXLabs Kotlin Validation API.
 
+## Version 2.0.0
+
+#### ValidationGraphException (class)
+
+Represents an exception that will be thrown when validation mode is set to DEFAULT.
+
+#### Validator.validate (function)
+
+Builds and validates a subject on-the-fly.
+
 ## Version 1.0.0
 
 #### MemberAssertion (class)

@@ -23,8 +23,7 @@ import org.junit.jupiter.api.assertThrows
 
 class MemberAssertionContextStringExtensionTests {
 
-    private val member =
-        "Property 'StringExtensionTestSubject.property' of type 'kotlin.String?'"
+    private val member = "Property 'StringExtensionTestSubject.property' of type 'kotlin.String?'"
 
     @Test
     fun `MemberAssertionContext_mustBeNullOrBlank should assert correctly on validation failure`() {

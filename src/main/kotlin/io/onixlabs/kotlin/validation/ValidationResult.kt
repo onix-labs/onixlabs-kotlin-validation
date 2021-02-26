@@ -16,7 +16,7 @@
 
 package io.onixlabs.kotlin.validation
 
-import io.onixlabs.kotlin.core.reflection.fullName
+import io.onixlabs.kotlin.core.reflection.formattedQualifiedName
 import kotlin.reflect.KCallable
 import kotlin.reflect.KClass
 import kotlin.reflect.KFunction
@@ -72,7 +72,7 @@ open class ValidationResult internal constructor(val name: String, protected val
     internal fun createMember(callable: KCallable<*>): MemberResult {
         return MemberResult(
             name = callable.name,
-            type = callable.returnType.fullName,
+            type = callable.returnType.formattedQualifiedName,
             declaration = when (callable) {
                 is KProperty -> "Property"
                 is KFunction -> "Function"

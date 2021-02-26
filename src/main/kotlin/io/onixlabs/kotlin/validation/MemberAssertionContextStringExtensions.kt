@@ -143,7 +143,7 @@ fun MemberAssertionContext<out String?>.mustNotBeBlank(
         override val id: String = id.toUpperSnakeCase()
 
         override fun isValid(): Boolean {
-            return subject?.isNotBlank() ?: false
+            return subject?.isNotBlank() ?: true
         }
     }
 
@@ -187,7 +187,7 @@ fun MemberAssertionContext<out String?>.mustNotBeEmpty(
         override val id: String = id.toUpperSnakeCase()
 
         override fun isValid(): Boolean {
-            return subject?.isNotEmpty() ?: false
+            return subject?.isNotEmpty() ?: true
         }
     }
 
